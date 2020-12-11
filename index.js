@@ -4,6 +4,9 @@ const app = express();
 const port = 3000;
 
 const userRoute = require('./routers/user.router');
+const authRoute = require('./routers/auth.router');
+
+const authMiddleware = require('./middlewares/auth.middleware');
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -21,7 +24,8 @@ app.get('/', (req, res) => {
     });
 });
 
-app.use('/users', userRoute);
+app.use('/users', authMiddleware.requireAuth, userRoute);
+app.use('/auth', authRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
