@@ -1,0 +1,25 @@
+{
+  "name": "nodejswebserverusingexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VvencesS/NodeJS-Web-Server-using-Express.git"
+  },
+  "keywords": [
+    "NodeJS"
+  ],
+  "author": "Trần Đức Soạn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VvencesS/NodeJS-Web-Server-using-Express/issues"
+  },
+  "homepage": "https://github.com/VvencesS/NodeJS-Web-Server-using-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
