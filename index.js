@@ -7,6 +7,8 @@ const userRoute = require('./routers/user.router');
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
+app.use(express.static('public'));
+
 app.set('view engine', 'pug');
 app.set('views', './views');
 
