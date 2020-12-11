@@ -1,3 +1,6 @@
-img(src="/images/logo.png")
-h1 Hello #{name}
-a(href="/users") User list
+extends ./layouts/common
+
+block  content
+  img(src="/images/logo.png")
+  h1 Hello #{name}
+  a(href="/users", class="btn btn-primary") User list
