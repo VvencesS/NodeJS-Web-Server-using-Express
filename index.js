@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
@@ -11,7 +13,7 @@ const authMiddleware = require('./middlewares/auth.middleware');
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-app.use(cookieParser('jgfygweuegfueiw7'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 
 app.use(express.static('public'));
 
