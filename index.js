@@ -7,6 +7,7 @@ const port = 3000;
 
 const userRoute = require('./routers/user.router');
 const authRoute = require('./routers/auth.router');
+const productRoute = require('./routers/product.router');
 
 const authMiddleware = require('./middlewares/auth.middleware');
 
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 
 app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
+app.use('/products', productRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
