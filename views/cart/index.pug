@@ -1,0 +1,17 @@
+extends ../layouts/common
+
+block  content
+  h1 Cart
+
+  table.table
+    tr
+      th Product Id
+      th Amount
+      th Action
+
+    each product in newCart
+      tr
+        td= product.productId
+        td= product.amount
+        td
+          a.btn.btn-link(href='#') Delete product    

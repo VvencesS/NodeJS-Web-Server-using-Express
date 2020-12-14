@@ -624,5 +624,21 @@
       "image": "https://loremflickr.com/320/240",
       "description": "pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in"
     }
+  ],
+  "sessions": [
+    {
+      "id": "McjzaIWpa",
+      "cart": {
+        "dd3992c5-cd4f-410d-a558-eb4ef438f209": 2,
+        "4b0a6817-787b-4eb2-bb7f-58cd6dddfeb8": 1,
+        "undefined": 2
+      }
+    },
+    {
+      "id": "mbFI8e2qw"
+    },
+    {
+      "id": "Aoso4-T13"
+    }
   ]
 }
