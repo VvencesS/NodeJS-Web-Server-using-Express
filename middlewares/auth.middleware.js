@@ -1,17 +1,15 @@
 const db = require('../routers/db');
 
 module.exports.requireAuth = (req, res, next) => {
-    if(!req.signedCookies.userId) {
-        res.redirect('auth/login');
+    if (!req.signedCookies.userId) {
+        res.redirect('/auth/login');
         return;
     }
 
-    const user = db.get('users').find({ 
-        id: req.signedCookies.userId 
-    }).value();
+    var user = db.get('users').find({ id: req.signedCookies.userId }).value();
 
-    if(!user) {
-        res.redirect('auth/login');
+    if (!user) {
+        res.redirect('/auth/login');
         return;
     }
 

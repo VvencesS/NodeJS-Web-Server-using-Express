@@ -35,7 +35,7 @@ module.exports.index = (req, res) => {
         .find({ id: sessionId })
         .get('cart')
         .value();
-    delete cart.undefined;
+    // delete cart.undefined;
 
     let keys = Object.keys(cart);
     let values = Object.values(cart);

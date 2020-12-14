@@ -630,15 +630,34 @@
       "id": "McjzaIWpa",
       "cart": {
         "dd3992c5-cd4f-410d-a558-eb4ef438f209": 2,
-        "4b0a6817-787b-4eb2-bb7f-58cd6dddfeb8": 1,
-        "undefined": 2
+        "4b0a6817-787b-4eb2-bb7f-58cd6dddfeb8": 1
       }
     },
     {
-      "id": "mbFI8e2qw"
+      "id": "WOiaWtDoO",
+      "cart": {
+        "dd3992c5-cd4f-410d-a558-eb4ef438f209": 1
+      }
     },
     {
-      "id": "Aoso4-T13"
+      "id": "mBMF79TSv"
+    },
+    {
+      "id": "hqWD9e8sI"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "fwkGoWjcj",
+      "amount": 300000,
+      "accountId": "34356",
+      "userId": "RQXzmZcUF"
+    },
+    {
+      "id": "4FI9b-E6W",
+      "amount": 150000,
+      "accountId": "12345",
+      "userId": "RQXzmZcUF"
     }
   ]
 }

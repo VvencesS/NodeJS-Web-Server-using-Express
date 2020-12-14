@@ -9,9 +9,13 @@ block  content
       th Amount
       th Action
 
-    each product in newCart
+    if newCart
+      each product in newCart
+        tr
+          td= product.productId
+          td= product.amount
+          td
+            a.btn.btn-link(href='#') Delete product    
+    else
       tr
-        td= product.productId
-        td= product.amount
-        td
-          a.btn.btn-link(href='#') Delete product    
+        td(colspan="3") Không có sản phẩm nào        
