@@ -11,12 +11,18 @@ block  content
 
   table.table
     tr
+      th Avatar
       th Name
       th Phone
       th Action
 
     each user in users
       tr
+        td
+          if user.avatar
+            img.rounded-circle(src=user.avatar, width="64")
+          else  
+            img.rounded-circle(src="https://loremflickr.com/320/240", width="64")
         td= user.name
         td= user.phone
         td
