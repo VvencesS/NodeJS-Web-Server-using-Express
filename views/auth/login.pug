@@ -8,6 +8,7 @@ block  content
       .alert.alert-danger= error
 
   form(action="/auth/login", method="POST")
+    input(type="hidden", name="_csrf", value=csrfToken)
     .form-group.input-group-sm
       label(for='email') Email
       input#email.form-control(type='text', name='email', value=values ? values.email : '')

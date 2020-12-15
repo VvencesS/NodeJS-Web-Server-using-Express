@@ -4,18 +4,18 @@ const db = require('../routers/db');
 
 module.exports.index = (req, res) => {
     res.render('users/index', {
-        users: db.get('users').value(),
+        users: db.get('users').value()
     });
 }
 
 module.exports.search = (req, res) => {
-    var q = req.query.q;
-    var matchUsers = db.get('users').value().filter(user => {
+    let q = req.query.q;
+    let matchUsers = db.get('users').value().filter(function (user) {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
 
     res.render('users/index', {
-        users: matchUsers,
+        users: matchedUsers,
     });
 }
 
@@ -34,7 +34,7 @@ module.exports.get = (req, res) => {
 
 module.exports.postCreate = (req, res) => {
     req.body.id = shortid.generate();
-    req.body.avatar = req.file.path.split('\\').slice(1).join('/');   
+    req.body.avatar = req.file.path.split('\\').slice(1).join('/');
 
     db.get('users').push(req.body).write();
     res.redirect('/users');

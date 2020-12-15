@@ -3,7 +3,9 @@ const md5 = require('md5');
 const db = require('../routers/db');
 
 module.exports.login = (req, res) => {
-    res.render('auth/login');
+    res.render('auth/login', { 
+        csrfToken: req.csrfToken() 
+    });
 };
 
 module.exports.postLogin = (req, res) => {

@@ -3,6 +3,12 @@ require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 const app = express();
 const port = 3000;
@@ -12,6 +18,8 @@ const authRoute = require('./routers/auth.router');
 const productRoute = require('./routers/product.router');
 const cartRoute = require('./routers/cart.router');
 const transferRoute = require('./routers/transfer.router');
+
+const apiProductRoute = require('./api/routers/product.router');
 
 const authMiddleware = require('./middlewares/auth.middleware');
 const sessionMiddleware = require('./middlewares/session.middleware');
@@ -41,6 +49,8 @@ app.use('/auth', authRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
 app.use('/transfer', authMiddleware.requireAuth, transferRoute);
+
+app.use('/api/products', apiProductRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
