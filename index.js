@@ -31,7 +31,7 @@ app.use(cookieParser(process.env.SESSION_SECRET));
 
 app.use(sessionMiddleware);
 
-app.use(csrf({ cookie: true }));
+// app.use(csrf({ cookie: true }));
 
 app.use(express.static('public'));
 
