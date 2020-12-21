@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const csrf = require('csurf');
 const mongoose = require('mongoose');
 
@@ -13,11 +14,24 @@ mongoose.connect(process.env.MONGO_URL, {
 const app = express();
 const port = 3000;
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true,
+}))
+
+// app.use('/',(req,res,next)=>{
+//     console.log(req.body)
+//     console.log(req.params)
+//     console.log(req.query)
+//     res.send('okkk')
+// })
+
 const userRoute = require('./routers/user.router');
 const authRoute = require('./routers/auth.router');
 const productRoute = require('./routers/product.router');
 const cartRoute = require('./routers/cart.router');
 const transferRoute = require('./routers/transfer.router');
+const flatListRoute = require('./routers/flatList.router');
 
 const apiProductRoute = require('./api/routers/product.router');
 
@@ -51,6 +65,9 @@ app.use('/cart', cartRoute);
 app.use('/transfer', authMiddleware.requireAuth, transferRoute);
 
 app.use('/api/products', apiProductRoute);
+
+// Call api cho TutorialRN
+app.use('/food', flatListRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
